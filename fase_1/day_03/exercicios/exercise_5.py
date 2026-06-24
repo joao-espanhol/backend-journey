@@ -9,11 +9,11 @@ class Recipe:
         return f"Name: {self.nome}; Style: {self.estilo} (ABV {self.abv}%) - {self.volume_litros} L"
 
     def __repr__(self):
-        return f"Recipe(nome={self.nome}, estilo={self.estilo}, abv={self.abv}, volume_litros={self.volume_litros})"
+        return f"Recipe(nome={self.nome!r}, estilo={self.estilo!r}, abv={self.abv!r}, volume_litros={self.volume_litros!r})"
 
     def __eq__(self, other):
         if not isinstance(other, Recipe):
-            return False
+            return NotImplemented
         return self.nome == other.nome and self.estilo == other.estilo
 
     def __hash__(self):
