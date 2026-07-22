@@ -28,7 +28,7 @@ def check_abv(batch_name: str | None = None):
     else:
         return None
 
-def check_liters(batch_name: str | None = None) -> str:
+#def check_liters(batch_name: str | None = None) -> str:
     if batch_name is not None:
         return next(
             (b["liters"] for b in batches if b["name"] == batch_name),
@@ -47,4 +47,4 @@ def check_liters_fixed(batch_name: str | None = None) -> float:
         return -1.0
 
 print(check_abv("Porto Seguro"))
-print(check_liters("Porto Seguros"))
+#print(check_liters("Porto Seguros"))
